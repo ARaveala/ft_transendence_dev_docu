@@ -46,7 +46,7 @@ This way, you’re respecting the rule: **you’re not importing a full OAuth mo
 ---
 
 
-#### Token based authentication
+## Token based authentication
 
 A method where users are identified using a temporary, secure token (usually a string or session ID) issued after login. The server validates this token with each action to confirm the user’s identity, without needing to store passwords or credentials long-term.
 

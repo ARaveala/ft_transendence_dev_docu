@@ -7,10 +7,8 @@ This document outlines what each approach enables, limits, and demands based on 
 
 ## ⚙️ With a Backend
 
-
 ### ✅ Pros
-- **User Authentication**: <a href="Definitions.md#OAuth2" title="Secure login protocol used for verifying external identities.">OAuth2</a>
- login (optional; only if external identity is required)
+- **User Authentication**:Enables <a href="Definitions.md#Token based authentication " title="A method where users are identified using a temporary, secure token (like a string or ID) issued after login.">token-based user identity</a> management and secure session handling. External logins (e.g. <a href="Definitions.md#OAuth2" title="Secure login protocol used for verifying external identities.">OAuth2</a> or 42 API) are optional and only needed if external identity integration is desired i.e(using google accounts, or 42 login).
 - **Multiplayer Support**: Real-time game coordination via WebSockets
 - **Persistent Data**: Scores, profiles, settings, chat logs in a shared database
 - **Security**: Backend can sanitize inputs, handle JWTs, and protect against SQL injection/XSS
@@ -38,7 +36,7 @@ This document outlines what each approach enables, limits, and demands based on 
 
 ### ❌ Cons
 - **No persistent login or user accounts**
-  - Can’t verify identity or use OAuth2
+  - No secure login, token handling, or verification across devices. Alias input is possible, but user sessions can't be validated or persisted without backend support.
 - **No centralized data**
   - Scores, aliases, and game history live only in browser
 - **Multiplayer limited**

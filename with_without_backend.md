@@ -1,14 +1,14 @@
 
 # 🧠 Backend vs Frontend-Only: Architecture Overview
 
-This document outlines what each approach enables, limits, and demands — based on ft_transcendence constraints.
+This document outlines what each approach enables, limits, and demands based on ft_transcendence constraints.
 
 ---
 
 ## ⚙️ With a Backend
 
 ### ✅ Pros
-- **User Authentication**: OAuth2 login (e.g. 42 API or Google)
+- **User Authentication**: OAuth2 login (optional; only if external identity is required)
 - **Multiplayer Support**: Real-time game coordination via WebSockets
 - **Persistent Data**: Scores, profiles, settings, chat logs in a shared database
 - **Security**: Backend can sanitize inputs, handle JWTs, and protect against SQL injection/XSS
@@ -52,27 +52,59 @@ This document outlines what each approach enables, limits, and demands — based
 
 ---
 
-## 🔍 Mandatory Project Requirements & Backend Implications
+## 🔍 Baisic and Mandatory Project Requirements & Backend Implications
 
-| Requirement | With Backend | Without Backend |
-|------------|--------------|-----------------|
-| Local multiplayer (same keyboard) | ✅ Not required | ✅ Fully supported |
-| Remote multiplayer (via module) | ✅ Required | ⚠️ Limited via WebRTC, no persistence |
-| Tournament system | ✅ Full support with DB | ⚠️ Only local simulation, no shared state |
-| Registration system (aliases) | ✅ Aliases stored in DB | ⚠️ Limited to localStorage or memory |
-| Matchmaking & next match display | ✅ Server-side queue | ❌ Not possible across devices |
-| Paddle speed & AI fairness | ✅ Can enforce server-side | ✅ Can be enforced via frontend logic |
-| Security (SQLi/XSS) | ✅ Can sanitize server inputs | ❌ Cannot prevent malicious manipulation |
-| Docker deployment | ✅ Full-stack container | ✅ Simple static site container |
-| SPA with Back/Forward nav | ✅ Yes | ✅ Yes (via frontend routing) |
-| TypeScript frontend | ✅ Required (unless overridden) | ✅ Required (unless overridden) |
+| Requirement                         | With Backend                               | Without Backend                                |
+|------------------------------------|--------------------------------------------|------------------------------------------------|
+| Local multiplayer (same keyboard)  | ✅ Not required                             | ✅ Fully supported                              |
+| Remote multiplayer (via module)    | ✅ Required                                 | ⚠️ Limited via WebRTC, no persistence           |
+| Tournament system                  | ✅ Full support with DB                     | ⚠️ Only local simulation, no shared state       |
+| Registration system (aliases)      | ✅ Aliases stored in DB                     | ⚠️ Limited to localStorage or memory            |
+| Matchmaking & next match display   | ✅ Server-side queue                        | ❌ Not possible across devices                  |
+| Paddle speed & AI fairness         | ✅ Can enforce server-side                  | ✅ Can be enforced via frontend logic           |
+| Security (SQLi/XSS)                | ✅ Can sanitize server inputs               | ❌ Cannot prevent malicious manipulation        |
+| Docker deployment                  | ✅ Full-stack container                     | ✅ Simple static site container                 |
+| SPA with Back/Forward nav          | ✅ Yes                                      | ✅ Yes (via frontend routing)                   |
+| TypeScript frontend                | ✅ Required (unless overridden)             | ✅ Required (unless overridden)                 |
+
+---
+
+## 🔐 Security Requirements (Based on Subject Constraints)
+
+Security is **mandatory**, regardless of whether you choose to use a backend.
 
 ---
 
-## 🧠 TL;DR Summary
-
-- A **frontend-only** setup can meet minimum criteria for a demo with local multiplayer and interface.
-- A **backend** is strongly recommended if you want authentication, remote matchmaking, tournament control, persistent scores, and security.
-- Certain project expectations (like protection against SQLi/XSS or organizing matches across players) imply server-side infrastructure — even if the document technically allows frontend-only development.
+### ✅ Input Validation
+- You **must validate all user inputs and forms**.
+- If you're building a frontend-only app:
+  - Validation must be done **on the base page** (in the browser).
+  - Example: JavaScript validation for name fields, score submissions, etc.
+- If you're using a backend:
+  - Input should be **validated server-side** (in PHP or framework).
+  - Prevent malformed requests, unexpected inputs, or unsafe actions.
 
 ---
+
+### 🧠 API & Route Protection
+- If your architecture includes **an API**, it must be **secure**.
+- You **do not have to use JWT or 2FA** (unless the JWT Security module is active), but:
+  - Routes should be protected from unauthorized or spoofed requests.
+  - If users can send match results or chat messages, make sure only valid users can do it.
+  - Validate tokens or session IDs on server where applicable.
+
+---
+
+### ✍️ Planning Note
+> You can implement a simple alias system instead of a full login.  
+> Even without JWT or OAuth2, it's critical that any sensitive route (e.g. storing match results, initiating new games) is protected from abuse or injection.
+
+---
+
+## ✅ Summary
+| Security Feature        | With Backend       | Without Backend       |
+|------------------------|--------------------|------------------------|
+| Input Validation        | ✅ Server-side checks (e.g. PHP) | ✅ Client-side validation (JavaScript) |
+| Route Protection        | ✅ Secure API logic (auth, tokens) | ❌ No route protection without backend |
+| JWT / 2FA               | ⚠️ Optional via module | ❌ Not applicable |
+| Overall Site Security   | ✅ Server + client protection | ✅ Must handle via frontend controls |

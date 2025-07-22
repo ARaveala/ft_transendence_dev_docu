@@ -209,7 +209,7 @@ Backend protects by:
 
 ---
 
-### XSS (Cross-Site Scripting)
+### XSS Cross Site Scripting
 Cross-Site Scripting (XSS) is an attack where a user submits malicious content that gets rendered as executable code in someone else's browser.
 
 Often used to:

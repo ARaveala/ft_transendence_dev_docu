@@ -1,6 +1,33 @@
-API - a set of rules and protocols that allows different software applications to communicate with each other
+#### API
+
+An API (*Application Programming Interface*) is a bridge that allows two systems to communicate with each other. In web development, it typically refers to the way a frontend (like a browser or game UI) sends requests to a backend server and receives responses.
+
+You use an API when:
+- Submitting a form (e.g. login, registration)
+- Fetching game data or leaderboard scores
+- Sending chat messages or match results
 
 ---
+### API route
+
+An API Route is a specific URL on the backend where these requests are handled, each route triggers a specific action, like verifying credentials or fetching profile data.
+Routes are tied to actions:
+- `GET` to fetch data
+- `POST` to send or create data
+- `PUT`/`PATCH` to update data
+- `DELETE` to remove data
+
+```http
+Post /auth/login
+```
+⚠️ Common Mistakes
+- Not validating input → Can lead to SQL injection or broken responses
+- Mixing route naming conventions → e.g. using /createUser for one route and /user/42 for another → Instead, follow RESTful conventions (/user, /user/:id, /login)
+- No consistent error handling → Some routes return vague 500s, others detailed 400s — confuse frontend devs
+- Missing authentication checks → Forgetting to validate tokens leads to unauthorized access
+
+🧠 TL;DR API routes are where client meets server. Define them clearly, validate input, and secure them properly.
+
 #### OAuth2
 
 OAuth2 is an authorization protocol that lets users log in using external services (e.g. Google, GitHub, school intranet), without sharing their password directly with your site. Instead, it exchanges secure tokens to verify identity between systems.

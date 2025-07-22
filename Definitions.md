@@ -65,3 +65,62 @@ A method where users are identified using a temporary, secure token (usually a s
 This approach lets you build custom lightweight security for things like tournament actions, chat messages, and match submissions, even if you're not using full login systems or external identity providers.
 
 ---
+
+## Websockets
+
+WebSockets are a protocol that creates a **persistent, two-way connection** between a user's browser and your server. Unlike traditional HTTP (which sends a request and then closes), WebSockets stay open, making them ideal for live interaction.
+
+### 🔧 What They’re Used For
+- **Real-time Pong gameplay** (syncing ball and paddle positions)
+- **In-game chat** (players see each other's messages instantly)
+- **Live match updates** (e.g. "Next match: Alice vs Bob")
+- **Player status events** (disconnects, score changes)
+
+### 🔄 How They Keep Data Live
+Once a WebSocket connection is opened, both client and server can push data to each other **at any time**, without needing to refresh the page or send separate HTTP requests.
+
+<details>
+<summary><strong>Example1</strong></summary> 
+   
+> Bob moves his paddle → browser sends a WebSocket message to server  
+> Server immediately forwards that to Alice’s browser  
+> Alice sees Bob’s paddle move, in real time
+
+This keeps gameplay smooth, without delay or polling.
+</details>
+
+
+
+### 🛡️ Security & Sanitation
+WebSockets are just a data channel, they don’t sanitize anything by default.
+
+You **must** manually clean and validate anything users send:
+- **On the server**, before storing or rebroadcasting (SQLi risk)
+- **On the client**, before displaying in the DOM (XSS risk)
+
+<details>
+<summary><strong>Example2</strong></summary>
+ 
+> A user sends a chat message with weird code or unexpected HTML  
+> If you display it without filtering, it could break your page — or worse, run scripts  
+> Always treat WebSocket messages like *untrusted input*
+
+### 🧪 Beginner-Friendly Example
+WebSockets commonly transmit data using lightweight JSON messages , here is a clean and maliciouse message:
+
+```json
+{
+  "event": "chat",
+  "sender": "Alice",
+  "message": "Good luck!"
+}
+
+{
+  "event": "chat",
+  "sender": "Alice",
+  "message": "<img src='x' onerror='alert(\"Hacked!\")'>"
+}
+```
+</details>
+
+---

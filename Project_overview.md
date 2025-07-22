@@ -13,8 +13,10 @@ modules.
 
 It is mandatory to do minimum of 7 major modules, 2 minor modules count as 1 major module.
 ##### III.2 Minimal technical requirement
+
 • You are free to develop the site, [with or without a backend.](with_without_backend.md)
-    ◦ If you choose to include a backend, it must be written in pure PHP without
+
+- If you choose to include a backend, it must be written in pure PHP without
 frameworks. However, this requirement can be overridden by the Framework
 module.
 

@@ -1,5 +1,7 @@
-Project overview for transcendence . 
-Mandatory part
+
+# Project overview for transcendence.
+
+### Mandatory part
 This project is about creating a website for the mighty Pong contest!
 
 Your software will offer a nice user interface and real-time multiplayer capabilities allowing
@@ -7,8 +9,9 @@ to play Pong with all your friends!
 
 your project needs to adhere to the mandatory guidelines as a minimum
 ? what does this mean ? Some of these constraints may be overridden by the choice of specific
-modules. ?
-III.2 Minimal technical requirement
+modules.?
+
+##### III.2 Minimal technical requirement
 • You are free to develop the site, [with or without a backend.](with_without_backend.md)
 
 

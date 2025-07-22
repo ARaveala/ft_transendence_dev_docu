@@ -4,14 +4,14 @@
 This document outlines what each approach enables, limits, and demands based on ft_transcendence constraints.
 
 ---
-
+ 
 ## ⚙️ With a Backend
 
 ### ✅ Pros
 - **User Authentication**:Enables <a href="Definitions.md#token-based-authentication " title="A method where users are identified using a temporary, secure token (like a string or ID) issued after login.">token-based user identity</a> management and secure session handling. External logins (e.g. <a href="Definitions.md#oauth2" title="Secure login protocol used for verifying external identities.">OAuth2</a> or 42 API) are optional and only needed if external identity integration is desired i.e(using google accounts, or 42 login).
 - **Multiplayer Support**: Real-time game coordination via <a href="Definitions.md#websockets " title="Real-time connection channel between frontend and backend, used for live updates like gameplay, chat, or notifications.">WebSockets</a>
 - **Persistent Data**: Scores, profiles, settings, chat logs in a shared database
-- **Security**: Backend can sanitize inputs, handle JWTs, and protect against SQL injection/XSS
+- **Security**: Backend can sanitize inputs, handle  <a href="Definitions.md#jwt " title="a string token sent to the client after login, used to identify the client.">JWTs</a>, and protect against  <a href="Definitions.md#sql-injection " title="Occurs when malicious input gets sent to your database without being filtered..">SQL injection</a>/<a href="Definitions.md#xss-injection " title="Occurs when malicious input  gets inserted into HTML without being filtered">XSS</a>
 - **Matchmaking & Tournament Management**: Queue players, schedule matches, and display who’s playing
 - **Aliases Across Sessions**: Track player names, reset automatically with each tournament
 - **Docker Friendly**: Runs full backend server and DB in one container

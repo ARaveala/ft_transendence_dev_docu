@@ -20,6 +20,9 @@ It is mandatory to do minimum of 7 major modules, 2 minor modules count as 1 maj
 frameworks. However, this requirement can be overridden by the Framework
 module.
 
+- If your backend or framework uses a database, you must follow the constraints
+of the Database module.
+
 
 modules
  You will be able to choose the modules you want among a large list, but each module and mandatory element contains technical constraints you cannot bypass. So you can select the topics you like, but not technologies you like.

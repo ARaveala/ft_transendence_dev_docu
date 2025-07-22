@@ -168,7 +168,7 @@ Most teams use Node.js, Python, Go, or PHP for JWT-heavy work because of mature 
 
 ---
 
-### 💉 SQL Injection
+### SQL Injection
 
 SQL Injection is a type of attack where malicious users send crafted input that tricks your server into executing unintended database commands.
 Instead of behaving like simple form input, the attacker embeds **SQL commands** into the request, potentially altering or destroying data.
@@ -209,7 +209,7 @@ Backend protects by:
 
 ---
 
-### 💉 XSS (Cross-Site Scripting)
+### XSS (Cross-Site Scripting)
 Cross-Site Scripting (XSS) is an attack where a user submits malicious content that gets rendered as executable code in someone else's browser.
 
 Often used to:

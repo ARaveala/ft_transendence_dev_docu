@@ -1,4 +1,4 @@
-#### API
+### API
 
 An API (*Application Programming Interface*) is a bridge that allows two systems to communicate with each other. In web development, it typically refers to the way a frontend (like a browser or game UI) sends requests to a backend server and receives responses.
 
@@ -28,7 +28,9 @@ Post /auth/login
 
 🧠 TL;DR API routes are where client meets server. Define them clearly, validate input, and secure them properly.
 
-#### OAuth2
+---
+
+### OAuth2
 
 OAuth2 is an authorization protocol that lets users log in using external services (e.g. Google, GitHub, school intranet), without sharing their password directly with your site. Instead, it exchanges secure tokens to verify identity between systems.
 

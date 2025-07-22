@@ -7,8 +7,10 @@ This document outlines what each approach enables, limits, and demands based on 
 
 ## ⚙️ With a Backend
 
+
 ### ✅ Pros
-- **User Authentication**: OAuth2 login (optional; only if external identity is required)
+- **User Authentication**: <a href="definitions.md#OAuth2" title="Secure login protocol used for verifying external identities.">OAuth2</a>
+ login (optional; only if external identity is required)
 - **Multiplayer Support**: Real-time game coordination via WebSockets
 - **Persistent Data**: Scores, profiles, settings, chat logs in a shared database
 - **Security**: Backend can sanitize inputs, handle JWTs, and protect against SQL injection/XSS

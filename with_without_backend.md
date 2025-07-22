@@ -1,73 +1,78 @@
 
+# 🧠 Backend vs Frontend-Only: Architecture Overview
 
-With Backend
-- Enables secure user auth, multiplayer state management, persistent storage
-- Should ensure cross-browser API and WebSocket support
-- You’ll need backend-side error logging and response handling
-- Container runs server (PHP or framework), DB, and frontend
-Without Backend
-- Limits features to local-only or peer-to-peer logic; no centralized user data
-- Must handle DOM quirks, caching, or browser inconsistencies entirely in JS
-- Client must handle all exceptions gracefully — tricky with peer-to-peer or local-only code
-- Container runs only frontend server (e.g. Node/React static server) or just serves static files
+This document outlines what each approach enables, limits, and demands — based on ft_transcendence constraints.
 
+---
 
+## ⚙️ With a Backend
 
+### ✅ Pros
+- **User Authentication**: OAuth2 login (e.g. 42 API or Google)
+- **Multiplayer Support**: Real-time game coordination via WebSockets
+- **Persistent Data**: Scores, profiles, settings, chat logs in a shared database
+- **Security**: Backend can sanitize inputs, handle JWTs, and protect against SQL injection/XSS
+- **Matchmaking & Tournament Management**: Queue players, schedule matches, and display who’s playing
+- **Aliases Across Sessions**: Track player names, reset automatically with each tournament
+- **Docker Friendly**: Runs full backend server and DB in one container
+- **Error Handling**: Central place to log and respond to unexpected behavior
 
-# Frontend-Only Architecture
-✅ Benefits:
-- Simplicity: No need to deploy or maintain a server
-- Fast setup: All logic and storage in the browser = fewer moving parts/no db
-- Quick sharing: Can be hosted on GitHub Pages, Netlify, or Vercel with minimal fuss
-- Great for local demos or prototypes
+### ❌ Cons
+- Requires backend setup: server, database, API routes
+- Higher complexity (e.g. PHP or framework module)
+- More files and services to maintain
+- Deployment involves more configuration
 
-❌ Drawbacks:
-- No secure user accounts (no OAuth, no password verification)
-- Data lives only on the user’s device (via localStorage, etc.)
-- No multiplayer matchmaking unless using peer-to-peer or third-party services
-- Security is minimal — everything is exposed in client-side code
-- No centralized leaderboard, chat history, or persistent profiles
+---
 
-# Backend-Enabled Architecture
-✅ Benefits:
-- Authentication: Can integrate with OAuth2 (e.g., 42 API, Google)
-- Real-time multiplayer: Handle matchmaking and game sync via WebSockets
-- Persistent data: Store scores, avatars, settings, and chat in a shared database
-- Security: Backend can manage JWTs, rate-limiting, 2FA, and data validation
-- Modularity: Easier to separate concerns (frontend UI vs. backend logic)
+## 🧁 Without a Backend (Frontend-Only)
 
-❌ Drawbacks:
-- Complexity: Requires knowledge of backend frameworks (NestJS, Express, etc.)
-- More setup: Database, server deployment, API routing
-- Maintenance overhead: Server uptime, bug tracking, deployment pipelines
+### ✅ Pros
+- Easy to develop and deploy
+- All logic runs in the browser (no server needed)
+- Can host on GitHub Pages, Netlify, or Vercel
+- Suitable for local demos and prototypes
+- Docker image can be minimal (static site or lightweight frontend server)
 
-# List of mandatory requirements that may require backend:
-- 🎮 Player vs. Player Gameplay & Tournament System
-    - Real-time multiplayer needs coordination, game state syncing, and persistent player data — difficult (if not impossible) to do securely in the frontend alone. Backend helps manage match queues, results, and tournament flow.
-- Protection Against SQL Injections & XSS
-    - Implies use of a database, which is a backend component. Securing queries against SQLi is impossible without a server-side layer.
-- Must run in Docker	A containerized app
-     - typically includes backend services and a database — frontend-only SPA doesn’t justify Docker’s full purpose.
-- Authentication & Persistent Profiles (based on module expectations)	OAuth (e.g. 42 API) requires secure token exchange handled server-side. Storing user accounts and scores needs a database and backend logic.
-⚠️ Here's What You Lose if you skip a backend:
+### ❌ Cons
+- **No persistent login or user accounts**
+  - Can’t verify identity or use OAuth2
+- **No centralized data**
+  - Scores, aliases, and game history live only in browser
+- **Multiplayer limited**
+  - Peer-to-peer possible (via WebRTC), but unstable and hard to scale
+- **Matchmaking impossible**
+  - Can’t schedule players across devices or sessions
+- **No server-side validation**
+  - Vulnerable to cheating, spoofing, and XSS/SQLi risks
+- **No shared chat history**
+  - Can only use localStorage or in-memory — wiped on refresh
+- **Reset logic must be manual**
+  - Tournament info and aliases must be cleared per session/device
 
-- User accounts: No persistent login or profiles
-- Matchmaking: Hard to support multiplayer unless it's peer-to-peer
-- Persistence: No database = scores, history, avatars vanish between sessions
-- Security: Client-only apps can't securely manage authentication or sensitive logic
+---
 
-Frontend-only apps = no real persistence
+## 🔍 Mandatory Project Requirements & Backend Implications
 
-Without a backend, your app can only store data in:
-- localStorage (survives reloads, but isn’t secure)
-- sessionStorage (gets wiped when the tab closes)
-- IndexedDB (a bit more advanced)
+| Requirement | With Backend | Without Backend |
+|------------|--------------|-----------------|
+| Local multiplayer (same keyboard) | ✅ Not required | ✅ Fully supported |
+| Remote multiplayer (via module) | ✅ Required | ⚠️ Limited via WebRTC, no persistence |
+| Tournament system | ✅ Full support with DB | ⚠️ Only local simulation, no shared state |
+| Registration system (aliases) | ✅ Aliases stored in DB | ⚠️ Limited to localStorage or memory |
+| Matchmaking & next match display | ✅ Server-side queue | ❌ Not possible across devices |
+| Paddle speed & AI fairness | ✅ Can enforce server-side | ✅ Can be enforced via frontend logic |
+| Security (SQLi/XSS) | ✅ Can sanitize server inputs | ❌ Cannot prevent malicious manipulation |
+| Docker deployment | ✅ Full-stack container | ✅ Simple static site container |
+| SPA with Back/Forward nav | ✅ Yes | ✅ Yes (via frontend routing) |
+| TypeScript frontend | ✅ Required (unless overridden) | ✅ Required (unless overridden) |
 
-But:
-These only store data on the user’s own device
-You can’t share data across users or keep a central history
-You can’t reliably store login sessions or user-specific data (like scores or 2FA)
-Cannot do secure authentication due too. 
+---
 
-Frontend-only solutions are fragile, insecure, and local-only
-Backend = secure, persistent, centralized data and identity
+## 🧠 TL;DR Summary
+
+- A **frontend-only** setup can meet minimum criteria for a demo with local multiplayer and interface.
+- A **backend** is strongly recommended if you want authentication, remote matchmaking, tournament control, persistent scores, and security.
+- Certain project expectations (like protection against SQLi/XSS or organizing matches across players) imply server-side infrastructure — even if the document technically allows frontend-only development.
+
+---

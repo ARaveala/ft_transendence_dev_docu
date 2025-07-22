@@ -9,7 +9,7 @@ This document outlines what each approach enables, limits, and demands based on 
 
 
 ### ✅ Pros
-- **User Authentication**: <a href="definitions.md#OAuth2" title="Secure login protocol used for verifying external identities.">OAuth2</a>
+- **User Authentication**: <a href="Definitions.md#OAuth2" title="Secure login protocol used for verifying external identities.">OAuth2</a>
  login (optional; only if external identity is required)
 - **Multiplayer Support**: Real-time game coordination via WebSockets
 - **Persistent Data**: Scores, profiles, settings, chat logs in a shared database

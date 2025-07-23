@@ -44,32 +44,19 @@ etc.
 - Free cloud-hosted Docker: Replit, Gitpod, Render
 - Some services restrict container types or volumes — research platform capabilities before committing
 
-On the computers of your campus, you may access the container
-software in rootless mode for security reasons. This could lead to
+On the computers of your campus, you may access the [container
+software in rootless mode](root_no_root.md) for security reasons. This could lead to
 the following extra constraints:
-✅ You can use Docker (or Podman, containerd)
-❌ But you won’t have root access
-✅ Your project must adapt to rootless-mode limitations, like:
-- No access to privileged host folders
-- Limited networking
-- No bind-mounted volumes between host & container unless permissions match
 • Your runtime needs to be located in /goinfre or /sgoinfre.
 • You are not able to use “bind-mount volumes” between the host
-and the container if non-root UIDs are used in the container.
-❌ You cannot use bind-mount volumes → Normally lets you share folders between host and container → With non-root container IDs, this is blocked in rootless mode
-But in rootless mode, the container UID can’t access host files via bind-mount. 🧠 → Instead, copy files into the image or use Docker volumes configured internally.
 
+Depending on the current requirements of the subject and the local configuration in clusters, you may need to
+adopt different strategies, such as: 
+- container solution in virtual machine
+- rebuild your container after your changes
+- craft your own image with root as unique UID.
+  - Use a custom UID that mimics root inside the container → This means defining "USER root" or "USER 0" in the Dockerfile → But only if your platform allows it
 
-Depending on the current requirements of the subject (highlighted in
-green above) and the local configuration in clusters, you may need to
-adopt different strategies, such as: container solution in virtual
-machine, rebuild your container after your changes, craft your own
-image with root as unique UID.
-##### what
-- You might need to rebuild the container after config changes (no hot-reloading) 
-modules
-- Use a custom UID that mimics root inside the container → This means defining "USER root" or "USER 0" in the Dockerfile → But only if your platform allows it
-- 
  You will be able to choose the modules you want among a large list, but each module and mandatory element contains technical constraints you cannot bypass. So you can select the topics you like, but not technologies you like. **add tables for each modules with techincal constraints**
 
 Some modules may depend on others, some modules may conflict with

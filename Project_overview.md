@@ -36,7 +36,7 @@ website. **add a list of typical errors, include typical oversights**
 
 - You must use Docker to run your website. Everything must be launched with a
 single command line to run an autonomous container.this means :
-- You can't run scripts directly on the host system
+- You can run scripts directly on the host system but The app runs entirely inside the container, with no need for extra setup on the host
 - Your entire stack (frontend, backend, assets, database, etc.) lives inside the container
 
 Several container technologies exist: Docker, containerd, podman,
@@ -47,6 +47,12 @@ etc.
 On the computers of your campus, you may access the container
 software in rootless mode for security reasons. This could lead to
 the following extra constraints:
+✅ You can use Docker (or Podman, containerd)
+❌ But you won’t have root access
+✅ Your project must adapt to rootless-mode limitations, like:
+- No access to privileged host folders
+- Limited networking
+- No bind-mounted volumes between host & container unless permissions match
 • Your runtime needs to be located in /goinfre or /sgoinfre.
 • You are not able to use “bind-mount volumes” between the host
 and the container if non-root UIDs are used in the container.

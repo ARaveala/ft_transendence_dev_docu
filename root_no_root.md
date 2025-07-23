@@ -33,8 +33,7 @@ Cross-container communication can get tricky, especially if you rely on localhos
 #### 📜 6. Certificate Setup for HTTPS
 Managing TLS certificates is harder without root, especially when tools write to /etc/ssl or use privileged ports.
 - Solution:
-    - Generate certs ahead of time on a dev machine with root
-    - Add them to the container during build (COPY ./certs)
+    -  Generate self-signed certs inside the container using openssl and store them in safe paths like /app/certs
     - Serve HTTPS from NGINX inside the container on 8443
     - Ensure the frontend uses WSS for secure WebSockets
 #### 🧪 7. Rebuilding Instead of Live Editing

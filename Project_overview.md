@@ -25,32 +25,46 @@ of the Database module.
 - The frontend should be developed using Typescript as base code. However, this
 requirement can be modified through the FrontEnd module.
 
-- Your website must be a single-page application. The user should be able to use the
+- Your website must be a single-page (add a page link here that contains the wiki provided and a quick rundown of that wiki) application. The user should be able to use the
 Back and Forward buttons of the browser.
 
 - Your website must be compatible with the latest stable up-to-date version of
 Mozilla Firefox . Of course, it can be compatible with other web browsers!
 
 - The user should encounter no unhandled errors or warnings when browsing the
-website.
+website. **add a list of typical errors, include typical oversights**
+
 - You must use Docker to run your website. Everything must be launched with a
-single command line to run an autonomous container.
+single command line to run an autonomous container.this means :
+- You can't run scripts directly on the host system
+- Your entire stack (frontend, backend, assets, database, etc.) lives inside the container
 
 Several container technologies exist: Docker, containerd, podman,
-etc. On the computers of your campus, you may access the container
+etc.
+- Free cloud-hosted Docker: Replit, Gitpod, Render
+- Some services restrict container types or volumes — research platform capabilities before committing
+
+On the computers of your campus, you may access the container
 software in rootless mode for security reasons. This could lead to
 the following extra constraints:
 • Your runtime needs to be located in /goinfre or /sgoinfre.
 • You are not able to use “bind-mount volumes” between the host
 and the container if non-root UIDs are used in the container.
+❌ You cannot use bind-mount volumes → Normally lets you share folders between host and container → With non-root container IDs, this is blocked in rootless mode
+But in rootless mode, the container UID can’t access host files via bind-mount. 🧠 → Instead, copy files into the image or use Docker volumes configured internally.
+
+
 Depending on the current requirements of the subject (highlighted in
 green above) and the local configuration in clusters, you may need to
 adopt different strategies, such as: container solution in virtual
 machine, rebuild your container after your changes, craft your own
 image with root as unique UID.
-
+##### what
+- You might need to rebuild the container after config changes (no hot-reloading) 
 modules
- You will be able to choose the modules you want among a large list, but each module and mandatory element contains technical constraints you cannot bypass. So you can select the topics you like, but not technologies you like.
+- Use a custom UID that mimics root inside the container → This means defining "USER root" or "USER 0" in the Dockerfile → But only if your platform allows it
+- 
+ You will be able to choose the modules you want among a large list, but each module and mandatory element contains technical constraints you cannot bypass. So you can select the topics you like, but not technologies you like. **add tables for each modules with techincal constraints**
 
 Some modules may depend on others, some modules may conflict with
-others. 
+others. **add a table of modules that conflict with eachother**

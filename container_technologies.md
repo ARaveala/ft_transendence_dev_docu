@@ -20,7 +20,7 @@ will be minimal.
 - Wide Adoption: Being the industry standard, using Docker prepares you for real-world development environments.
 
 ❌ Cons for ft_transcendence:
-- Rootless Challenges: As detailed in the existing choosing_rootles.md document, running Docker in rootless mode introduces complexities with port binding, volume mounts, and file permissions. These require careful configuration and understanding.
+- Rootless Challenges: As detailed in the existing [choosing_rootles.md](choosing_rootles.md) document, running Docker in rootless mode introduces complexities with port binding, volume mounts, and file permissions. These require careful configuration and understanding.
 - Daemon-based: Docker Engine runs as a background daemon, which some consider an overhead or a potential single point of failure (though generally stable).
 
 Project Scope & Tools:
@@ -88,7 +88,7 @@ Other Noteworthy Technologies (Briefly):
 Given the team's familiarity with Docker and the project's constraints:
 
 Docker (with careful attention to rootless mode solutions): This remains the most straightforward path due to team familiarity and the robust docker-compose ecosystem.
-The challenges of rootless mode should be well documented in choosing_rootles.md and are manageable with the provided solutions.
+The challenges of rootless mode should be well documented in [choosing_rootles.md](choosing_rootles.md) and are manageable with the provided solutions.
 
 Podman: This is a strong contender, especially if we find Docker's rootless mode configurations particularly cumbersome.
 Its native rootless support and Docker-compatible CLI could offer a smoother experience once the initial setup is understood.

@@ -39,11 +39,6 @@ single command line to run an autonomous container.this means :
 - You can run scripts directly on the host system but The app runs entirely inside the container, with no need for extra setup on the host
 - Your entire stack (frontend, backend, assets, database, etc.) lives inside the container
 
-Several container technologies exist: Docker, containerd, podman,
-etc.
-- Free cloud-hosted Docker: Replit, Gitpod, Render
-- Some services restrict container types or volumes — research platform capabilities before committing
-
 On the computers of your campus, you may access the [container
 software in rootless mode](choosing_rootles.md) for security reasons.
 

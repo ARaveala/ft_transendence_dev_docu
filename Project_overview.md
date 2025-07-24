@@ -46,15 +46,10 @@ etc.
 
 On the computers of your campus, you may access the [container
 software in rootless mode](choosing_rootles.md) for security reasons.
+
 • Your runtime needs to be located in /goinfre or /sgoinfre.
 
-Depending on the current requirements of the subject and the local configuration in clusters, you may need to
-adopt different strategies, such as:
-
-- container solution in virtual machine
-- rebuild your container after your changes
-- craft your own image with root as unique UID.
-  - Use a custom UID that mimics root inside the container → This means defining "USER root" or "USER 0" in the Dockerfile → But only if your platform allows it
+We are not restricted to using Docker, [here](container_technologies.md) is a small rundown of choices
 
  You will be able to choose the modules you want among a large list, but each module and mandatory element contains technical constraints you cannot bypass. So you can select the topics you like, but not technologies you like. **add tables for each modules with techincal constraints**
 

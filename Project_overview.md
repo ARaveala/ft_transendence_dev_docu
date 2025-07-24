@@ -45,7 +45,7 @@ etc.
 - Some services restrict container types or volumes — research platform capabilities before committing
 
 On the computers of your campus, you may access the [container
-software in rootless mode](root_no_root.md) for security reasons.
+software in rootless mode](choosing_rootles.md) for security reasons.
 • Your runtime needs to be located in /goinfre or /sgoinfre.
 
 Depending on the current requirements of the subject and the local configuration in clusters, you may need to

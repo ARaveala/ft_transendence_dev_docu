@@ -16,10 +16,10 @@ It is mandatory to do minimum of 7 major modules, 2 minor modules count as 1 maj
 
 - You are free to develop the site, [with or without a backend.](with_without_backend.md)
 
-• If you choose to include a backend, it must be written in pure PHP without
+- If you choose to include a backend, it must be written in pure PHP without
 frameworks. However, this requirement can be overridden by the Framework
 module.
-• If your backend or framework uses a database, you must follow the constraints
+- If your backend or framework uses a database, you must follow the constraints
 of the Database module.
 
 - The frontend should be developed using Typescript as base code. However, this

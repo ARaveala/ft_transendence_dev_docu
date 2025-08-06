@@ -4,9 +4,10 @@ if the information can be labeled well even better
 link to where we came from if possible here 
 
 ## fastify 
-In the context of your Transcendence project, Fastify handles all the server-side logic — the part that runs behind the scenes. That includes:
 
-Managing player data (scores, profiles, matchmaking)
+In the context of your Transcendence project, Fastify handles all the server-side logic. That includes:
+
+Managing player data (scores, profiles, matchmaking) (alternative options form other modules?) 
 
 Handling HTTP requests (like when a player joins a game or sends a move)
 
@@ -41,4 +42,7 @@ Feature	What It Does
 - 🔄 Async/Await Support	Clean, modern syntax for handling asynchronous operations like database queries
 🧩 Swagger Integration	Auto-generates API documentation with plugins like @fastify/swagger
 
+#### random notes 
+✅ Many student repositories use Fastify with Node.js successfully, often alongside tools like Prisma (ORM), Redis (caching), and Vite (frontend bundler).
+⚠️ Deployment Expectations: Deployment isn’t officially required by the school, but many students go the extra mile to deploy using Docker, Nginx, and HTTPS. This can introduce complexity if you're not careful with Fastify’s static file serving or socket configuration.
 ## node.js

@@ -4,7 +4,7 @@
 This document outlines what each approach enables, limits, and demands based on ft_transcendence constraints.
 
 ---
- XSS (Cross-Site Scripting)
+
 ## ⚙️ With a Backend
 
 ### ✅ Pros

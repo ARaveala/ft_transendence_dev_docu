@@ -1,15 +1,10 @@
 # Major module: Use a framework to build the backend.
-In this major module, you are required to use a specific web framework for backend
+In this major module, you are required to use a specific web <a href="Definitions.md#frameworks " title="software framework that is designed to support the development of web applications ">framework</a> for backend
 development:  [fastify](fastify.md)  with [node.js](node_js.md).
 
 You can create the backend without using the constraints of this
 module by using the default backend language [php without frameworks](small_frameworks.md). However, this module will only be valid if you
 follow its requirements. This means using only fastify with node.js . 
-
-```
-<a href="Definitions.md#token-based-authentication " title="A method where users are identified using a temporary, secure token (like a string or ID) issued after login.">
-```
-link to definition web framework to be included
 
 #### value of this module 
 
@@ -18,16 +13,28 @@ Using a web framework  provides a structured and efficient way to build the back
 - request handling and plugin support , allows for more rapid developement and testing.
 - security tools that help mitigate vunralbilities like XSS attacks
 - access to to node.js ecosystem tools leik ESLint and testing frameworks improves collaboration and code quality
-- flexability with easier integration with databse and real time communications ([websockets])
+- flexability with easier integration with databse and real time communications (<a href="Definitions.md#websockets " title="  a communication protocol that provides a persistent, bidirectional, full-duplex channel over a single TCP connection">[websockets]</a>)
 
  
 # Minor module: Use a framework or toolkit to build the front-end.
 Your frontend development must use the Tailwind CSS in addition of the Typescript, and nothing else.
 
-note: If graphics module is chosen the use of babylon may overwrite this module if babylon is not used carefully, optionally we can opt to use babylon to utalize tools allowing us to write a different module faster.
+Note: If graphics module is chosen the use of babylon may overwrite this module if babylon is not used carefully, optionally we can opt to use babylon and utalize tools allowing us to write a different module faster. Rendering UI Inside Babylon Instead of HTML
+If we use Babylon to create buttons, menus, or overlays inside the 3D canvas (e.g., using Babylon GUI), we will be bypassing Tailwind CSS and HTML.
 
 You can create a front-end without using the constraints of this
 module by using the default front-end directives (The frontend should be developed using Typescript as base code). However, this module will only be valid if you follow its requirements.
+
+Note: choosing default with typescript as base opens up options to use :
+
+- React (with or without Next.js)
+- Vue.js (with or without Nuxt)
+- Angular
+- Svelte or SvelteKit
+- SolidJS
+- amongs a very large list of other alternatives .
+
+Many of these options may increase learning curve and lack of advice and help from other students .
 
 internal link to typescript to be added.
 

@@ -4,7 +4,7 @@ development:  [fastify](fastify.md)  with [node.js](node_js.md).
 
 You can create the backend without using the constraints of this
 module by using the default backend language [php without frameworks](small_frameworks.md). However, this module will only be valid if you
-follow its requirements. This means using only fastify with node.js .If graphics module is chosen the use of babylon will overwrite this module. 
+follow its requirements. This means using only fastify with node.js . 
 
 ```
 <a href="Definitions.md#token-based-authentication " title="A method where users are identified using a temporary, secure token (like a string or ID) issued after login.">
@@ -23,6 +23,8 @@ Using a web framework  provides a structured and efficient way to build the back
  
 # Minor module: Use a framework or toolkit to build the front-end.
 Your frontend development must use the Tailwind CSS in addition of the Typescript, and nothing else.
+
+note: If graphics module is chosen the use of babylon may overwrite this module if babylon is not used carefully, optionally we can opt to use babylon to utalize tools allowing us to write a different module faster.
 
 You can create a front-end without using the constraints of this
 module by using the default front-end directives (The frontend should be developed using Typescript as base code). However, this module will only be valid if you follow its requirements.

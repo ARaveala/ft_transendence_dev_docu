@@ -1,7 +1,7 @@
 links should be some explanation with 1 or more websource and or youtube video , if you add a youtube video please make sure you have seen it first and it has some educational value that you understand. 
 
 ## fastify 
-if this tool is used to fullfill a module , typescript will not be available even though it is compatible due to module completion requirements.
+if this tool is used to fullfill a module , other backend languages (php) will not be available even if they are compatible due to module completion requirements.
 Fastify is a high performance web framework for building backend applications in Node.js.
 
 #### tools with fastify

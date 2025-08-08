@@ -17,7 +17,7 @@ Using a web framework  provides a structured and efficient way to build the back
 
  
 # Minor module: Use a framework or toolkit to build the front-end.
-Your frontend development must use the Tailwind CSS in addition of the Typescript, and nothing else.
+Your frontend development must use the [Tailwind CSS] in addition of the [Typescript](typescript.md), and nothing else.
 
 Note: If graphics module is chosen the use of babylon may overwrite this module if babylon is not used carefully, optionally we can opt to use babylon and utalize tools allowing us to write a different module faster. Rendering UI Inside Babylon Instead of HTML
 If we use Babylon to create buttons, menus, or overlays inside the 3D canvas (e.g., using Babylon GUI), we will be bypassing Tailwind CSS and HTML.

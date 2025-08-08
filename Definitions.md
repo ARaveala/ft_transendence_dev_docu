@@ -274,3 +274,19 @@ if this is displayed raw in frontend:
 🧠 TL;DR If someone submits HTML, never render it raw. Treat user input like radioactive material until cleaned.
 
 ---
+
+### Frameworks
+
+A framework in this context refers to a structured set of tools, libraries, and conventions designed to streamline software development. Frameworks exist for both the backend and frontend: backend frameworks like Fastify help manage server side logic, routing, and data handling, while frontend frameworks (or libraries) like Tailwind CSS or Babylon.js assist in building user interfaces, styling, and rendering graphics. By enforcing consistent patterns and reducing boilerplate code, frameworks accelerate development, improve maintainability, and often include built-in support for performance and security.
+
+
+Frameworks differ from libraries in that they often control the flow of your application, whereas libraries are tools you call when needed.
+
+⚠️ Things to watch out for
+
+- lock in risk, frameworks can be hard to replace once adopted
+- compatability with other tools
+- opinionated frameworks may restrict how the apps are structured
+
+---
+

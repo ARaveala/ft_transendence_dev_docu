@@ -1,5 +1,5 @@
 # What Does “Pure PHP Without Frameworks” Actually Mean?
-It means building your backend from scratch in vanilla PHP, without any pre-built frameworks like Laravel, Symfony, Slim, etc.
+It means building your backend from scratch in vanilla PHP, without any pre-built frameworks like fastify, etc.
 
 You would need to handle:
 - Manual routing (e.g. parsing $_SERVER['REQUEST_URI'])

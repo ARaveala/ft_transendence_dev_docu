@@ -54,6 +54,16 @@ The designated database for all DB instances in your project is [SQLite](sqllite
 ensure data consistency and compatibility across all project components and may
 be a prerequisite for other modules, such as the backend Framework module.
 
+note: this module does not seem suggest we couldnt use another database, if we do choose another databse, we will loose this module, we then have to copmare compatability with other modules we have chosen. 
+
+#### value of this module 
+- Simple no config and serverless
+- Runs locally so 0 network latency
+- Ideal for ready heavy operations (not ideal for write heavy)
+- Data base is tored in a file , this aids crossplatform and running on multiple machines without complex setup.
+- Since the entire database is a single file, backups are as simple as copying it. Great for versioning, rollback and testing.
+- Should be highly comptaible
+- Each player can have their own SQLite file, and each tournament can also be stored in a separate file. This modular structure simplifies data access, reduces write conflicts, and improves data safety by isolating operations per user or event.
 
 below yet to have links to tools applied
 # Major module: Store the score of a tournament in the Blockchain.

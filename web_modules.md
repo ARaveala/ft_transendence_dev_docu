@@ -19,8 +19,12 @@ Using a web framework  provides a structured and efficient way to build the back
 # Minor module: Use a framework or toolkit to build the front-end.
 Your frontend development must use the [Tailwind CSS] in addition of the [Typescript](typescript.md), and nothing else.
 
-Note: If graphics module is chosen the use of babylon may overwrite this module if babylon is not used carefully, optionally we can opt to use babylon and utalize tools allowing us to write a different module faster. Rendering UI Inside Babylon Instead of HTML
+Note: If graphics module is chosen the use of babylon may overwrite this module if babylon is not used carefully.
+
+Optionally we can opt to use babylon and utalize tools allowing us to write a different module faster.Rendering UI Inside Babylon Instead of HTML
 If we use Babylon to create buttons, menus, or overlays inside the 3D canvas (e.g., using Babylon GUI), we will be bypassing Tailwind CSS and HTML.
+** this must be double checked that it dosnt disqualify us completley **
+
 
 You can create a front-end without using the constraints of this
 module by using the default front-end directives (The frontend should be developed using Typescript as base code). However, this module will only be valid if you follow its requirements.
@@ -36,8 +40,14 @@ Note: choosing default with typescript as base opens up options to use :
 
 Many of these options may increase learning curve and lack of advice and help from other students .
 
-internal link to typescript to be added.
-
+#### value of this module
+- Tailwind’s utility first (class based) approach keeps styling clean and predictable. You apply design directly in your markup using reusable class names, the logic shares similarities with cpp because of this which will help the learning curve.
+- more variety in online resources (when probelm solving)
+- You don’t need to master full CSS syntax tailwind provides ready to use classes, and typescript helps structure your logic, this makes styling more intuitive and keeps your HTML and CSS tightly connected, reducing the need to jump between files (reduces context switching),you write markup, styling, and logic all in one place (usually .tsx files). .
+- Type safety meaning code is checked for errors before it runs, typeScript ensures that variables, props, and functions behave as expected. Tailwind doesn’t directly affect type safety, but when paired with TypeScript, you get smart suggestions for props, event handlers, and even HTML attributes. Autocomplete works better because TypeScript understands your code structure, and Tailwind plugins can suggest valid class names as you type.
+- responsive design such as screen sizes are easier managed through tailwind
+- editor tools and extensions for vscode share similarities with backend by choices made and are more readily ailable with this combo 
+With markup, styling, and logic all in one .tsx file, you avoid context switching between HTML, CSS, and JS
 
 # Minor module: Use a database for the backend -and more.
 The designated database for all DB instances in your project is [SQLite](sqllite.md) This choice

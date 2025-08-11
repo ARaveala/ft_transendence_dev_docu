@@ -83,3 +83,21 @@ a blockchain-based score storage system. Users will benefit from the added layer
 of security and transparency, ensuring the integrity of their gaming scores. The
 module emphasizes the use of a testing blockchain environment to minimize risks
 associated with blockchain development.
+
+
+### potential contradictions with other modules.
+- gdpr module [provide link here ] GDPR Article 17 gives users the “right to be forgotten”, blockchain data is immutable once written, it cannot be deleted. (may be able to beat the system depending of choice of types of data collected )
+- Blockchain often stores more metadata than strictly needed, especially if scores are linked to timestamps, wallet addresses, or other identifiers.
+This could conflict with GDPR’s purpose limitation and data minimization principles.
+- You must obtain explicit consent before storing such data on-chain. (since this module states using a testing blockchain , this may minimize requirements)
+- loosing speed and potentailly space required for data collection can cause issues.
+
+***this is incredibly light and bias, please prove me wrong i can not find anything that coudnt be resolved with the use of other modules, this is not so mainstream in gaming***
+#### value of this module 
+- cool factor, being able to show off blockchain understanding (decentralized tech.)
+- You could auto-calculate rankings or trigger “winner” announcements.
+- Once scores are stored, no one can secretly change them.
+- Every score is recorded on a public ledger, visible to all participants. (how this might be helpful for tracking progress but im not convinced)
+- Tamper resitence , block chains provide immutable data without concensus
+
+if we want to consider the option later, code must be kept modular, all score logic as seperate as possible. 

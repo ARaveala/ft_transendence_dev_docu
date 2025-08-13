@@ -18,24 +18,23 @@ details, accessible to logged-in users.
 The management of duplicate usernames/emails is at your discretion;
 please ensure a logical solution is provided.
 
-The User Management module is central to the project and works best when paired with: links to modules to be provided
-- Secure authentication
-- Social features
-- GDPR tools
-- Tournament tracking
+#### Modules to be Cautious With: 
+None. This module provides a foundational service for other modules, making them easier to implement.
 
-But it requires careful handling when integrating:
-- Blockchain (due to immutability)
-- Microservices (due to tight coupling)
+#### Complementary Modules:
+- Minor module: Use a database for the backend (SQLite)
+- Major module: Implement Two-Factor Authentication (2FA) and JWT
+- Major module: Remote authentication (as an alternative login method)
+- Major module: Live Chat
 
-To build this module, you’ll need:
-- Authentication tools (OAuth, JWT, 2FA)
-- User management logic (Fastify routes, SQLite schema or potentially other databse)
-- Security practices (password hashing, input validation) (eg bcrypt)
-- Tournament linkage (relational DB design)
-- User routes like login and registartion is handled by backend (eg, fastify)
-- Secure credential storage , no leaks can be handled using eg , zod, joi what else project safe methods 
+To build this module you will need:
+- A database to store user data, including hashed passwords
+- User-facing forms for registration and login
+- A secure password hashing library (bcrypt.js, argon2)
+- Session management or a token-based authentication system
+- File storage for user avatars
 
+Essential for: Fulfilling the mandatory user authentication requirement and providing the foundation for any user-specific features like profiles, chat, and game history.
 
 ## Major module: Implement remote authentication.
 In this major module, the goal is to implement the following authentication system:
@@ -45,8 +44,23 @@ Key features and objectives include:
 - Integrate the authentication system, allowing users to securely sign in.
 - Obtain the necessary credentials and permissions from the authority to enable
 secure login.
-- Implement user-friendly login and authorization flows that adhere to best practices and security standards.
+- Implement user-friendly login and authorization flows that adhere to best practices and security standards. [provide link to defintion of user friendly and best practises and security standards]
 - Ensure the secure exchange of authentication tokens and user information
 between the web application and the authentication provider.
+
+#### Modules to be Cautious With:
+None. This is an alternative login method that can coexist with standard user management.
+
+#### Complementary Modules:
+- Major module: Standard user management (as an alternative login method).
+- Major module: Implement Two-Factor Authentication (2FA) and JWT (JWTs are used for session management after the initial Google sign-in).
+
+To build this module you will need:
+- A backend to handle the OAuth2 flow
+- Google Cloud Console credentials
+- A client-side library to initiate the sign-in process (react-google-login)
+- A backend library to verify the authentication token (google-auth-library)
+- A database to store user information retrieved from Google
+
 This major module aims to provide a remote user authentication, offering users a
 secure and convenient way to access the web application.

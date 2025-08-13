@@ -18,6 +18,8 @@ details, accessible to logged-in users.
 The management of duplicate usernames/emails is at your discretion;
 please ensure a logical solution is provided.
 
+Explanation: This module is about creating a system that allows users to create accounts, log in with a username and password, and manage their profiles. It’s the essential starting point for any features that are specific to a logged-in user.
+
 #### Modules to be Cautious With: 
 None. This module provides a foundational service for other modules, making them easier to implement.
 
@@ -47,6 +49,8 @@ secure login.
 - Implement user-friendly login and authorization flows that adhere to best practices and security standards. [provide link to defintion of user friendly and best practises and security standards]
 - Ensure the secure exchange of authentication tokens and user information
 between the web application and the authentication provider.
+
+Explanation: This module gives users the option to log in using an external service, such as Google. Instead of creating a new username and password, they can use their existing account from another service. This provides a convenient and trusted way for users to access the application.
 
 #### Modules to be Cautious With:
 None. This is an alternative login method that can coexist with standard user management.

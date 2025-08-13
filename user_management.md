@@ -28,6 +28,14 @@ But it requires careful handling when integrating:
 - Blockchain (due to immutability)
 - Microservices (due to tight coupling)
 
+To build this module, you’ll need:
+- Authentication tools (OAuth, JWT, 2FA)
+- User management logic (Fastify routes, SQLite schema or potentially other databse)
+- Security practices (password hashing, input validation) (eg bcrypt)
+- Tournament linkage (relational DB design)
+- User routes like login and registartion is handled by backend (eg, fastify)
+- Secure credential storage , no leaks can be handled using eg , zod, joi what else project safe methods 
+
 
 ## Major module: Implement remote authentication.
 In this major module, the goal is to implement the following authentication system:

@@ -88,6 +88,7 @@ live blockchain.
 ◦ Interoperability: This module may have dependencies on other modules, particularly the Backend Framework module. Integrating blockchain functionality
 might require adjustments in the backend to accommodate interactions with
 the blockchain.
+
 By implementing this module, we aim to enhance the Pong website by introducing
 a blockchain-based score storage system. Users will benefit from the added layer
 of security and transparency, ensuring the integrity of their gaming scores. The
@@ -111,3 +112,5 @@ This could conflict with GDPR’s purpose limitation and data minimization princ
 - Tamper resitence , block chains provide immutable data without concensus
 
 if we want to consider the option later, code must be kept modular, all score logic as seperate as possible. 
+
+

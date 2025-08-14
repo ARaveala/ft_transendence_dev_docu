@@ -11,7 +11,7 @@ unless they solve a small, unique task that is part of a larger feature.
 module.](web_modules.md)
 
 - If your backend or framework uses a database, you must follow the constraints
-of the  <a href="web_modules.md#minor-module-use-a-database-for-the-backend-and-more" title=" this will take you to databse module">database module</a>. (must use SQLlite)
+of the  <a href="web_modules.md#minor-module-use-a-database-for-the-backend--and-more" title=" this will take you to databse module">database module</a>. (must use SQLlite)
 
 
 

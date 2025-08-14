@@ -75,7 +75,7 @@ This way, you’re respecting the rule: **you’re not importing a full OAuth mo
 ---
 
 
-## Token based authentication
+### Token based authentication
 
 A method where users are identified using a temporary, secure token (usually a string or session ID) issued after login. The server validates this token with each action to confirm the user’s identity, without needing to store passwords or credentials long-term.
 
@@ -290,3 +290,18 @@ Frameworks differ from libraries in that they often control the flow of your app
 
 ---
 
+### Full stack
+Full stack refers to the development of both the frontend (client-side) and backend (server-side) parts of a web application, including everything from the user interface to the server logic and, optionally, the database.
+
+It means you're working across the entire technology stack from what users see to how data is processed behind the scenes.
+
+---
+
+### Web application
+A software program that is run on a web server and accessed/interacted by users through a web browser dynamically. It's different from a traditional desktop application.
+
+Eg, trello or google docs are web applications
+
+Not to be confused with website which is more like a digital brochure, where as a web application is like a webiste with brains.
+
+---

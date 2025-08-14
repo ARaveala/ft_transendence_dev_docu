@@ -37,3 +37,9 @@ software in rootless mode](choosing_rootles.md) for security reasons.
 // this should be removed , check if any useful data there first We are not restricted to using Docker, [here](container_technologies.md) is a small rundown of choices
 
  You will be able to choose the modules you want among a large list, but each module and mandatory element contains technical constraints you cannot bypass. So you can select the topics you like, ***but not technologies you like***.
+
+## Modules that help fulfill the requirements
+- Minor module: Use a database for the backend: While not mandatory, the requirements imply that you will need a place to store data. A database is the standard way to do this. Alternative storage methods blockchain, in memory stoarge and browser storage. 
+- Minor module: Expanding Browser Compatibility: This module helps ensure the game runs on the various browsers that a user might have.
+
+

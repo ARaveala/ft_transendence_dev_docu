@@ -6,12 +6,14 @@ unless they solve a small, unique task that is part of a larger feature.
 
 - You are free to develop the site, [with or without a backend.](with_without_backend.md)
 
-- If you choose to include a backend, it must be written in pure PHP[link to php info] without
-frameworks[link to definition of framework]. However, this requirement can be overridden by the Framework
-module. [link to the framework module]
+- If you choose to include a backend, it must be written in pure <a href="Definitions.md#php " title=" general-purpose scripting language geared towards web development">PHP</a>  without <a href="Definitions.md#framework " title=" used by software developers to implement the standard structure of application software">frameworks</a>
+. However, this requirement can be overridden by the [Framework
+module.](web_modules.md)
 
 - If your backend or framework uses a database, you must follow the constraints
 of the Database module. (must use SQLlite) [link to the database module]
+
+ <a href="Definitions.md#Minor_module:_Use_a_database_for_the_backend_-and_more. " title=" general-purpose scripting language geared towards web development">tesst</a>
 
 - The frontend should be developed using Typescript[link to typescript] as base code. However, this
 requirement can be modified through the FrontEnd module.[link to front end module]

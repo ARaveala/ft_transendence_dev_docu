@@ -91,7 +91,6 @@ ensure data consistency and compatibility across all project components and may
 be a prerequisite for other modules, such as the backend Framework module.
 
 ---- 
-note: this module does not seem suggest we couldnt use another database, if we do choose another databse, we will loose this module, we then have to copmare compatability with other modules we have chosen. 
 
 Explanation: A database is like a digital filing cabinet for all your website's important information. Choosing this module means you will have a place to save data like user profiles, game results, and settings, so it doesn't disappear when you close the application.
 

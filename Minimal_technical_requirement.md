@@ -11,9 +11,9 @@ unless they solve a small, unique task that is part of a larger feature.
 module.](web_modules.md)
 
 - If your backend or framework uses a database, you must follow the constraints
-of the Database module. (must use SQLlite) [link to the database module]
+of the  <a href="web_modules.md#minor-module-use-a-database-for-the-backend-and-more." title=" this will take you to databse module">database module</a>. (must use SQLlite)
 
- <a href="Definitions.md#Minor_module:_Use_a_database_for_the_backend_-and_more. " title=" general-purpose scripting language geared towards web development">tesst</a>
+
 
 - The frontend should be developed using Typescript[link to typescript] as base code. However, this
 requirement can be modified through the FrontEnd module.[link to front end module]

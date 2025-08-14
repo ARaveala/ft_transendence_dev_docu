@@ -42,4 +42,4 @@ or if it essentially solves an entire feature or module (and is
 therefore prohibited).
  
 ## mandatory parts
-[III.2 Minimal technical requirement](Minimal_techincal_requirement.md)
+[III.2 Minimal technical requirement](Minimal_technical_requirement.md)

@@ -305,3 +305,43 @@ Eg, trello or google docs are web applications
 Not to be confused with website which is more like a digital brochure, where as a web application is like a webiste with brains.
 
 ---
+
+### php
+PHP (Hypertext Preprocessor) is a server-side scripting language designed primarily for web development, but also used as a general-purpose language. It runs on the server and dynamically generates HTML, handles form data, manages sessions, and interacts with databases.
+
+##### comparsion to c or cpp 
+- PHP is higher-level: You don’t worry about memory or pointers.
+- It’s loosely typed: You can mix types more freely than in C/C++.
+- It’s designed for the web: Built in functions for handling HTTP, forms, sessions, and HTML.
+- It’s interpreted: Code runs line by line on the server, not compiled ahead of time.
+
+<details>
+<summary><strong>example showing diff</strong></summary>
+
+php 
+
+```php
+
+<?php
+echo "Hello, " . $_GET['name'];
+?>
+
+```
+c
+
+```c
+#include <stdio.h>
+int main() {
+    printf("Hello, world\n");
+    return 0;
+}
+
+```
+
+</details>
+
+[php wiki link](https://en.wikipedia.org/wiki/PHP)
+
+---
+
+

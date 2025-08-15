@@ -28,6 +28,7 @@ Project Scope & Tools:
 - docker-compose.yml: Essential for orchestrating a multi-service application (frontend, backend, database) with a single docker-compose up command.
 - Build Process: You'll use docker build to create images and docker run (or docker-compose up) to run them. The "rebuilding instead of live editing" challenge will apply.
 
+# Relevant only if you want to have some familiarisation with other options, we can not use these options 
 ## 2. Podman
 Explanation: Podman is a daemonless container engine for developing, managing, and running OCI (Open Container Initiative) compliant containers on your Linux system.
 It's often seen as a direct alternative to Docker, providing a very similar command-line interface.

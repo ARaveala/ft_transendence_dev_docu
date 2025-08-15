@@ -1,3 +1,5 @@
+**rough, may need refining and double checking**
+
 Not handling all possible outcomes:
 The project's requirements state there should be no unhandled errors. This means your code needs to be defensive.
 A common beginner mistake is to assume a function will always return a valid result. For example, a function that reads from a file

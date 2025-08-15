@@ -1,4 +1,4 @@
-This file should contain some rough explanations with potentially some examples that bring some idea of what things look like or what they mean
+This file should contain some rough explanations with potentially some examples that bring some idea of what things look like or what they mean. if examples of things to be cautiouse with or common mistakes are added , keep them short or make a new file and link it. baisic link to a file syntax [name of link](file.md) ! warning this link will take you nowhere its just an example. 
 
 ### API
 

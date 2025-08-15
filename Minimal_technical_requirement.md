@@ -36,7 +36,7 @@ software in rootless mode](choosing_rootles.md) for security reasons.
 
 • Your runtime needs to be located in /goinfre or /sgoinfre.
 
-We are not restricted to using Docker, [here](container_technologies.md) is a small rundown of docker and other technologies listed in subject, others are listed just for extra knowladge, we can not use them .
+We are restricted to using Docker, [here](container_technologies.md) is a small rundown of docker and other technologies listed in subject, others are listed just for extra knowladge, we can not use them .
 
  You will be able to choose the modules you want among a large list, but each module and mandatory element contains technical constraints you cannot bypass. So you can select the topics you like, ***but not technologies you like***.
 

@@ -28,8 +28,8 @@ website. [Some typical errors](browsing_errors.md)
 
 - You must use Docker to run your website. Everything must be launched with a
 single command line to run an autonomous container.this means :
- - You can run scripts directly on the host system but The app runs entirely inside the container, with no need for extra setup on the host
- - Your entire stack (frontend, backend, assets, database, etc.) lives inside the container
+  - You can run scripts directly on the host system but The app runs entirely inside the container, with no need for extra setup on the host
+  - Your entire stack (frontend, backend, assets, database, etc.) lives inside the container
 
 On the computers of your campus, you may access the [container
 software in rootless mode](choosing_rootles.md) for security reasons.

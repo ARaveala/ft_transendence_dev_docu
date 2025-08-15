@@ -1,3 +1,5 @@
+This file should contain some rough explanations with potentially some examples that bring some idea of what things look like or what they mean
+
 ### API
 
 An API (*Application Programming Interface*) is a bridge that allows two systems to communicate with each other. In web development, it typically refers to the way a frontend (like a browser or game UI) sends requests to a backend server and receives responses.

@@ -133,3 +133,28 @@ SQLite uses “manifest typing,” which means it doesn’t strictly enforce col
 Easy to set up no server required
 Often used in mobile apps and browser extensions
 check how compatible SQLlite is against modules
+
+---
+ai dump because im going down a rabit hole 
+What is SQLite?
+Think of SQLite as a tiny, self-contained database that lives in a single file on your computer. Unlike larger databases like PostgreSQL, it doesn't need a separate server running to work. It's a serverless database that is perfect for a single program or a single person to use at one time.
+
+Because it's just a file, you can't have multiple players from different computers all trying to change it at the same time over the internet.
+
+The Key to Remote Play
+This is where your central game server comes in. For remote play, players don't talk to the SQLite file. They connect to your server, which acts as the game's central hub.
+
+The server has two main jobs:
+
+Handling Live Gameplay: It runs the game logic in real-time, processing things like player movements and scoring updates. All the players send their actions to this server, and the server sends back what everyone needs to see on their screens. This communication happens very quickly using an API.
+
+Managing the Database: Only the server talks to the SQLite database file. It's the one that decides when to save or load information.
+
+Handling Different Types of Game Data
+To make this work, you need to think about two kinds of data:
+
+Live Data: This is the temporary, fast-changing information during a game, like a player's current score or the position of the ball. This data is kept in the server's temporary memory so it can be accessed almost instantly without slowing the game down.
+
+Persistent Data: This is the long-term information you want to save. Once a game or tournament is finished, the server takes the final results from its temporary memory and saves it to the SQLite database. This includes player names, final scores, and tournament details.
+
+This way, the game stays fast and responsive, and your data is safely stored in the database for later use.

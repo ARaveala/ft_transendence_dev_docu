@@ -5,9 +5,9 @@ SQL Injection, and Cross-Site Request Forgery (CSRF). You also need to securely 
 
 In order to create a functional website, there are several security concerns you must
 address:
-- Any password stored in your database, if applicable, must be hashed. <a href="Definitions.md#password_hashing " title="a cryptographic process that converts a plaintext password into a fixed-length string of characters.">small definition of hashed passwords</a>
-- Your website must be protected against <a href="Definitions.md#sql_injection " title="a web security vulnerability that allows an attacker to interfere with the queries a web application makes to its database.">SQL injections</a>/
-<a href="Definitions.md#xss_cross_site_scripting " title="a type of security vulnerability found in web applications that allows attackers to inject malicious client-side scripts into web pages viewed by other users.">XSS attacks</a>.
+- Any password stored in your database, if applicable, must be hashed. <a href="Definitions.md#password_hashing" title="a cryptographic process that converts a plaintext password into a fixed-length string of characters.">small definition of hashed passwords</a>
+- Your website must be protected against <a href="Definitions.md#sql_injection" title="a web security vulnerability that allows an attacker to interfere with the queries a web application makes to its database.">SQL injections</a>/
+<a href="Definitions.md#xss_cross_site_scripting" title="a type of security vulnerability found in web applications that allows attackers to inject malicious client-side scripts into web pages viewed by other users.">XSS attacks</a>.
 - If you have a backend or any other features, it is mandatory to enable an HTTPS[what does this mean ]
 connection for all aspects (use wss instead of ws for example).
 - You must implement validation mechanisms for forms and any user input, either on

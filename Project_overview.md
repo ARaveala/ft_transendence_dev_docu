@@ -59,3 +59,10 @@ therefore prohibited).
 [III.2 Minimal technical requirement](Minimal_technical_requirement.md)
 
 [III.3 game (minimal requirements)](minimal_game.md)
+
+---
+
+IF you wish to alter files , please fork first and dont alter files without warning others. method of warning will be added, it might be informing in group chat, it may be we have 
+to create new files and do a comparison , it maybe we have to split tasks to ensure we do not all tamper the same files . 
+
+better detials required here (hopefully resolved monday )

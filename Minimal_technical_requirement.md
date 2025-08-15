@@ -24,7 +24,7 @@ requirement can be modified through the FrontEnd module.[link to front end modul
 Mozilla Firefox . Of course, it can be compatible with other web browsers!
 
 - The user should encounter no unhandled errors or warnings when browsing the
-website. **add a list of typical errors, include typical oversights**
+website. [Some typical errors](browsing_errors.md)
 
 - You must use Docker to run your website. Everything must be launched with a
 single command line to run an autonomous container.this means :

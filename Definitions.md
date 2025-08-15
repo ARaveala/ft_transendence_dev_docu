@@ -344,4 +344,34 @@ int main() {
 
 ---
 
+### password hashing 
+Hashing is the process of converting a password into a fixed-length string of characters using a mathematical algorithm. This string called a hash is what gets stored in your database, not the actual password.
+
+Key Characteristics of Hashing:
+- One way function: You can’t reverse a hash to get the original password.
+- Consistent output: The same input always produces the same hash.
+- Secure storage: Even if someone accesses your database, they won’t see actual passwords.
+
+🛡️ Why It Matters:
+If your database is compromised and passwords are stored in plain text, attackers instantly gain access to user accounts. But if passwords are hashed, they’d need to crack each hash individually which is much harder.
+
+example of hashing in javascript
+```javascript
+
+const bcrypt = require('bcrypt');
+const password = 'mySecurePassword123';
+const saltRounds = 10;
+
+bcrypt.hash(password, saltRounds, function(err, hash) {
+  // Store hash in your database
+  console.log('Hashed password:', hash);
+});
+```
+
+saltRounds adds randomness to the hash, making it harder to crack.
+
+bcrypt is a widely used hashing algorithm designed specifically for passwords.
+
+---
+
 

@@ -57,3 +57,5 @@ therefore prohibited).
  
 ## mandatory parts
 [III.2 Minimal technical requirement](Minimal_technical_requirement.md)
+
+[III.3 game (minimal requirements)](minimal_game.md)

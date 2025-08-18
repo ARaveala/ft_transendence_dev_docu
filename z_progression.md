@@ -39,16 +39,17 @@ Sectioning Off Study Categories
 - build docker files for front end and back end
       - tools required depend on decisions made
       - there are common tools others have used, a litte time should be spent on seeing if there are better alterantives
+      - at what stage do we need the docker files, once backend is ready or also front end , do we build them to minimal then the docker files
 
-Backend Development
+Backend Development (server)
 - What is the most basic function we can build and test first (e.g., a simple user registration and login using SQLite)?
 - Can we build and test the backend without the frontend for now, just to confirm it works?
-- What parts can back end devolopement be broken down into 
+- What parts can back end devolopement be broken down into , what does the workflow look like
 
-Frontend Development
+Frontend Development (the client)
 - What is the most basic frontend component we can build to test the backend (e.g., a login form)?
 - How can we build and test the frontend's look and feel without a live backend connection?
-- What parts can front end developement be broken down into
+- What parts can front end developement be broken down into, what does the wrok flow look like
   
 Communication and Collaboration
 - How will we share code and collaborate effectively?
@@ -76,3 +77,5 @@ Why it's useful: You can test your backend API immediately after building it wit
 What it's for: Unit and integration testing. Jest is a JavaScript testing framework that makes it easy to write and run tests for your code. It's commonly used with Node.js and TypeScript.
 
 Why it's useful: It allows you to write automated tests that check if small parts of your code (units) or entire features (integrations) are working as expected, which is essential for a complex project like this.
+
+I would hughly recomened writing tests with bash from the get go, this may help us reassure things dont stop working due to changes during progress. 

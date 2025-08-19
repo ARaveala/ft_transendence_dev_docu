@@ -51,20 +51,40 @@ What the Backend Does:
 - like log a user in or get their profile data, it sends a request to a specific URL on your backend server.
 The backend receives this request, processes it, and sends back a response.
 
-Real-Time Communication: The backend manages the WebSockets for real-time play. When a player moves their paddle, their frontend sends a message to the backend via the WebSocket.
+- Real-Time Communication: The backend manages the WebSockets for real-time play. When a player moves their paddle, their frontend sends a message to the backend via the WebSocket.
 The backend then immediately broadcasts that new paddle position to all other connected players.
 
-Database Management: The backend is the only thing that interacts with the SQLite database file.
+- Database Management: The backend is the only thing that interacts with the SQLite database file.
 It handles all the reading and writing of persistent data, like player scores, user profiles, and tournament details.
 
 The Workflow from Your Perspective:
 
-You build the backend code: You'll write the code that sets up the server, defines the API endpoints, and manages the database connection.
+- You build the backend code: You'll write the code that sets up the server, defines the API endpoints, and manages the database connection.
 
-You create a Dockerfile: This file tells Docker how to package your backend code and its dependencies (like the SQLite library) into a self-contained container.
+- You create a Dockerfile: This file tells Docker how to package your backend code and its dependencies (like the SQLite library) into a self-contained container.
 
-You run the container: When you execute docker-compose up, Docker starts your backend container. This container then starts your web server.
+- You run the container: When you execute docker-compose up, Docker starts your backend container. This container then starts your web server.
 
-You access it from the frontend: Your frontend container (which is separate) will serve the static HTML/CSS/JS files to your browser. That frontend code will be configured to make its API calls to the backend container's address (e.g., http://backend-service:8080).
+- You access it from the frontend: Your frontend container (which is separate) will serve the static HTML/CSS/JS files to your browser. That frontend code will be configured to make its API calls to the backend container's address (e.g., http://backend-service:8080).
 
-You are absolutely right about using localhost. When you run the project with Docker locally, your frontend and backend containers will be networked together, and you'll access the frontend in your browser at localhost (or a specific port you configure). The frontend, in turn, will make its requests to your backend service's internal Docker address.
+### so far what i understand about what needs to be done in backedn in general
+- create database and connect to it (sqlite3, jyst ebcause its more common?)
+- create end points (GET/user:id, POST/add-user, DELETE/user:id) (must ask front end what is needed for them, if there are any naming conventions to follow)
+- 
+### input parsing
+what errors should be displayed for logs only and what for users, eg incorrect username format for users, will we use schemas for all of this
+- score values (number, positive or negative)
+        - number
+        - positive or negative values (ask front end, how do we want scoring to work, will we be sent pre calculated value or are we doing the math backend)
+        - underflow overflow unexisting values
+        - minimum maximum score
+        - if win/loose , reset?
+        - tournament scores will have different rules what?
+  - usernames
+          - duplicate name handling
+          - potentially harmful characters in name (if the characters are likley to confuse code)
+
+
+## what i might need to know extra
+- what ORM is being used for database
+- anyother tools anyone is using i should list, they may affect what i need to do and how to do it

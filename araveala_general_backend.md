@@ -1,4 +1,4 @@
-## what do you mena backend
+## what do you men a backend
 
 
 1.What will back end handle consider modules:
@@ -143,6 +143,7 @@ Middleware is code that runs before your route handler. It can:
 - what ORM is being used for database
 - anyother tools anyone is using i should list, they may affect what i need to do and how to do it
 - will the game be front end or backend
+- what kind of requests will i be reciecing from front end , ie username , check if username exists? ect. i need these to write end points
 
   remote player may actually be possible with minimal effore, utalizing services such as Render/Vercel/Railway may give us an easier in
 
@@ -152,5 +153,5 @@ Middleware is code that runs before your route handler. It can:
 - score (?) how often to update it
 - tournament score
 - status (online offline) might make other thinsg easier
-- 
+- password
 

@@ -84,6 +84,53 @@ what errors should be displayed for logs only and what for users, eg incorrect u
           - duplicate name handling
           - potentially harmful characters in name (if the characters are likley to confuse code)
 
+if server side pong module 
+- Client connects → WebSocket handshake
+- Validate game input structure (actions and directions)
+- Validate player identity (JWT or session)
+
+
+<details><summary> examples of game logic input send to server</detail></summary>
+     
+```json
+{
+   "playerId": "player1",
+   "action": "move",
+    "direction": "up"
+}
+      // or 
+{
+    "playerId": "player2",
+     "action": "move",
+     "velocity": -5
+}
+```
+
+</details>
+
+after that :
+- Update game state (physics, collisions, scoring)
+- Broadcast updated state to all clients
+
+<details><summary> examples of game logic output to send to front end</detail></summary>
+
+```json
+{
+  "ball": { "x": 120, "y": 80 },
+  "paddles": {
+    "player1": { "y": 60 },
+    "player2": { "y": 140 }
+  },
+  "score": {
+    "player1": 2,
+    "player2": 3
+  }
+}
+
+```
+
+</details>
+
 ### applying middleware , here we can use the fastify hooks
 Middleware is code that runs before your route handler. It can:
 - Log requests
@@ -98,3 +145,12 @@ Middleware is code that runs before your route handler. It can:
 - will the game be front end or backend
 
   remote player may actually be possible with minimal effore, utalizing services such as Render/Vercel/Railway may give us an easier in
+
+## details for other memebers
+#### database needs to store 
+- username
+- score (?) how often to update it
+- tournament score
+- status (online offline) might make other thinsg easier
+- 
+

@@ -84,7 +84,17 @@ what errors should be displayed for logs only and what for users, eg incorrect u
           - duplicate name handling
           - potentially harmful characters in name (if the characters are likley to confuse code)
 
+### applying middleware , here we can use the fastify hooks
+Middleware is code that runs before your route handler. It can:
+- Log requests
+- Check authentication
+- Parse cookies
+- Rate-limit users
+- Handle errors
 
 ## what i might need to know extra
 - what ORM is being used for database
 - anyother tools anyone is using i should list, they may affect what i need to do and how to do it
+- will the game be front end or backend
+
+  remote player may actually be possible with minimal effore, utalizing services such as Render/Vercel/Railway may give us an easier in

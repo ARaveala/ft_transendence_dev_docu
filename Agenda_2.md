@@ -11,7 +11,7 @@ ft_transcendence Team Meeting Agenda – Backend Coordination
 - Security
 - undefined role propose DevOps / Testing / Documentation/security or front end
 
-discoveries or blockers from last week
+discoveries or blockers from last week ()
 show what we have working as examples or wha texamples will be written
 
 ## Integration Planning
@@ -84,5 +84,13 @@ then test how it runs inside Docker
 - Confirm game logic interface contract
 - Begin testing WebSocket structure
 - Finalize Dockerfile templates and Compose setup
+
+  ## new
+  tournament - tournamnet bracket style
+
+  front end - front pahe user page, tournament page, game page, friends and chat pages?? , login and logout pages, game over winner and looser, error,
+  pages are sent how .
+
+  Define the difference between websocket communication of https, so thats its clear for front end 
 
 Decide leftover member’s role (DevOps, QA, Docs)

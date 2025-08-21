@@ -35,7 +35,7 @@ Define data formats for communication between modules ()
 - Game is server-side, rendered with Babylon
 - Frontend sends input → backend validates → forwards to game logic
 - Game logic returns updated state → backend sends to frontend (how will this be managed, will task be split to game and front end)
-- Define expected input/output formats
+- Define expected input/output formats 
 - Clarify who controls game loop timing
 
 ## WebSocket Planning
@@ -65,7 +65,7 @@ Decide what gets tested first (auth, routing, game logic, all at the same time)
 
 Everyone contributes to Docker setup:?
 
-- Dockerfile for backend
+- Dockerfile for backend 
 - Dockerfile for frontend
 - docker-compose.yml to link services
 
@@ -94,3 +94,12 @@ then test how it runs inside Docker
   Define the difference between websocket communication of https, so thats its clear for front end 
 
 Decide leftover member’s role (DevOps, QA, Docs)
+
+## testers
+- write tester for sql injection nikolai
+- game syntax schema
+
+  run inside docker occasionally 
+
+
+  meeting modnay ....... what time

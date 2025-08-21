@@ -3,15 +3,30 @@
 
 1.What will back end handle consider modules:
 Back end module (1)
+
 Front end module (0.5)
+
 database module (0.5)
+
 user management (1)
+
 Game customization options. (0.5)
+
+
+Multiple language support (0.5)
+
+Minor module: Expanding Browser Compatibility (0.5)
+
+Implement Two-Factor Authentication (2FA) and JWT (1)
+
+Major module: Implement WAF/ModSecurity with Hardened Configuration and
+HashiCorp Vault for Secrets Management (1)
+
+
+
+# maybe
 game graphics with babylon (1)
 Major module: Introduce an AI opponent. (1) easy to add later
-Multiple language support (0.5)
-Minor module: Expanding Browser Compatibility (0.5)
-Implement Two-Factor Authentication (2FA) and JWT (1)
 
 2. what does the docker file need for backend to start with
 
